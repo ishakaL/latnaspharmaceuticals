@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KEC Market</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>KEC Online Market</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#">About Us</a>
+      <a href="product-details.html">Products</a>
+      <a href="#">Contact</a>
+      <a href="add-product.html">Admin Dashboard</a>
+      <a href="products_categories.html">Product Categories</a>
+
+      <div class="search-bar" style="display: flex; max-width: 600px; margin: 20px auto;">
+        <input type="text" id="searchInput" placeholder="What are you looking for?" style="flex: 1; padding: 10px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px 0 0 5px;">
+        <button onclick="searchProducts()" style="padding: 10px 20px; background-color: #28a745; color: white; border: none; border-radius: 0 5px 5px 0; font-size: 16px; cursor: pointer;">Search</button>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Welcome to Kano Economic City Online Pharmaceutical Products Marketplace</h2>
+    <h4>The top market for medicine and health products</h4>
+    <p>Your trusted destination for medicine and health products</p>
+    <img src="C:\Users\Ishaqa\Desktop\my products/kec-image2.jpg" width="1300" height="300" alt="KEC products">
+  </section>
+
+  <section class="about-us">
+    <div class="container">
+      <p>Kano Economic City (KEC) stands as a modern hub for commerce, innovation, and customer convenience. Our e-commerce platform brings this innovation to your fingertips—offering <strong>fast, secure, and efficient access to medicine and pharmaceutical products</strong> directly from the comfort of your home.</p>
+      <p>Whether you're in Kano or anywhere in Nigeria or other African countries, our online pharmaceutical platform makes it easier than ever to:</p>
+      <ul>
+        <li>Search and purchase verified medical products of your choice</li>
+        <li>Access trusted pharmacies across KEC</li>
+        <li>Get doorstep delivery with real-time tracking</li>
+        <li>Enjoy safe and encrypted payment options</li>
+      </ul>
+      <p>Our platform is designed with <strong>user efficiency and health accessibility</strong> at its core. With just a few clicks, you can manage prescriptions, explore health products, and connect with certified vendors — all within a trusted digital environment powered by KEC's growing infrastructure. <strong>Order smart, order safe. Order from KEC.</strong></p>
+    </div>
+  </section>
+
+  <section class="featured-products">
+    <h2>Featured Products</h2>
+
+    <div class="products-card">
+      <img src="assets/panadol.jpg" width="200" height="200" class="img-fluid" alt="Panadol Extra">
+      <h3 id="panadol">Panadol Extra</h3>
+      <p>NGN1800</p>
+      <p>Effective pain relief tablets</p>
+      <a href="product-details.html" class="btn btn-primary">Buy Now</a>
+    </div>
+
+    <div class="products-card">
+      <img src="assets/vitamin-c2.jpg" width="200" height="200" alt="Vitamin C 2">
+      <h3 id="vitamin-c">Vitamin C 2</h3>
+      <p>Boost your immune system.</p>
+      <a href="product-details.html?id=2" class="btn btn-primary">Buy Now</a>
+    </div>
+
+    <div class="products-card">
+      <img src="C:\Users\Ishaqa\Desktop\my products/kec-image2.jpg" width="200" height="200" alt="Vitamin C 3">
+      <h3>Vitamin C 3</h3>
+      <p>Boost your immune system.</p>
+      <a href="product-details.html" class="btn btn-primary">Buy Now</a>
+    </div>
+
+    <div class="products-card">
+      <img src="assets/vitamin-c4.jpg" width="200" height="200" alt="Vitamin C 4">
+      <h3>Vitamin C 4</h3>
+      <p>Boost your immune system.</p>
+      <a href="product-details.html" class="btn btn-primary">Buy Now</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 KEC Market. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function searchProducts() {
+      const query = document.getElementById("searchInput").value.toLowerCase();
+      const filtered = products.filter(p =>
+        p.name.toLowerCase().includes(query) ||
+        p.description.toLowerCase().includes(query)
+      );
+      displayProducts(filtered);
+    }
+  </script>
+</body>
+</html>

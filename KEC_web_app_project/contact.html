@@ -1,0 +1,53 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - kasuwa360</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="containe contact-section">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8">
+                <div class="contact-card p-4">
+                    <h2 class="text-center mb-4 text-success">Contact Us</h2>
+                    <form action="https://formspree.io/f/your-id" method="post">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your full name"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="text" class="form-control" id="email" placeholder="examleyourname@gmail.com"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Write Your Message </label>
+                            <textarea for="message" class="form-control" id="message" rows="5"
+                                placeholder="Write your message" required></textarea>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-success">send Message</button>
+                            <input type="hidden" name="_next" value="success.html">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center mt-5">
+        <p>Kano, Nigeria</p>
+        <p>📧support@gmail.com</p>
+        <p>📞📞+2348162934937</p>
+    </div>
+    <section>
+        <footer class="bg-dark text-white text-center py-3">&copy; 2025 kasuwa360. All rights reserved</footer>
+    </section>
+
+</body>
+
+</html>

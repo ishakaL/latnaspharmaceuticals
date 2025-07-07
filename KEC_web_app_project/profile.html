@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trader Profile | KEC Market</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f2f5;
+    }
+
+    .profile-container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .cover-photo {
+      background: linear-gradient(90deg, #3b5998, #1e3c72);
+      height: 140px;
+      position: relative;
+    }
+
+    .profile-photo {
+      position: absolute;
+      bottom: -45px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+    }
+
+    .profile-photo img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      object-fit: cover;
+    }
+
+    .profile-photo input[type="file"] {
+      margin-top: 8px;
+      font-size: 12px;
+    }
+
+    .profile-details {
+      padding: 60px 20px 10px;
+      text-align: center;
+    }
+
+    .profile-details h2 {
+      margin-bottom: 5px;
+      font-size: 22px;
+    }
+
+    .profile-details p {
+      color: #555;
+      font-size: 15px;
+    }
+
+    .profile-form {
+      padding: 20px;
+      border-top: 1px solid #ddd;
+    }
+
+    .profile-form label {
+      display: block;
+      margin-top: 15px;
+      font-weight: 600;
+      text-align: left;
+    }
+
+    .profile-form input,
+    .profile-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .profile-form button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 10px;
+      background: #3b5998;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .profile-form button:hover {
+      background: #2d4373;
+    }
+
+    @media (max-width: 600px) {
+      .profile-photo img {
+        width: 75px;
+        height: 75px;
+      }
+
+      .profile-details h2 {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-container">
+    <!-- Cover Photo + Logo Upload -->
+    <div class="cover-photo">
+      <div class="profile-photo">
+        <img id="shopImage" src="https://via.placeholder.com/100" alt="Shop Logo" />
+        <input type="file" id="uploadImage" accept="image/*" />
+      </div>
+    </div>
+
+    <!-- Shop Name and Description Preview -->
+    <div class="profile-details">
+      <h2 id="shopName">My Shop Name</h2>
+      <p id="shopDesc">This is a short description about the shop...</p>
+    </div>
+
+    <!-- Editable Profile Form -->
+    <div class="profile-form">
+      <label for="nameInput">Shop Name</label>
+      <input type="text" id="nameInput" value="My Shop Name" />
+
+      <label for="descInput">Shop Description</label>
+      <textarea id="descInput" rows="4">This is a short description about the shop...</textarea>
+
+      <button onclick="updateProfile()">Update Profile</button>
+    </div>
+  </div>
+
+  <script>
+    function updateProfile() {
+      const newName = document.getElementById("nameInput").value;
+      const newDesc = document.getElementById("descInput").value;
+
+      document.getElementById("shopName").innerText = newName;
+      document.getElementById("shopDesc").innerText = newDesc;
+
+      alert("Shop profile updated successfully!");
+    }
+
+    document.getElementById("uploadImage").addEventListener("change", function (e) {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (event) {
+          document.getElementById("shopImage").src = event.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+  </script>
+</body>
+</html>
